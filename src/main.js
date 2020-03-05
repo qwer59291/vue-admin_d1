@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import App from './App.vue'
-// import ElementUI from 'element-ui'
+import '../node_modules/element-ui/lib/theme-chalk/index.css'
+import ElementUI from 'element-ui'
 
 import router from '@/router.js'
-// Vue.use(ElementUI)
+Vue.use(ElementUI)
 
 Vue.config.productionTip = false
 
@@ -16,7 +17,7 @@ router.beforeEach((to, from, next) => {
   if (!user && to.path != '/login') {
     next({ path: '/login' })
   } else {
-    next()
+    next() 
   }
 })
 
